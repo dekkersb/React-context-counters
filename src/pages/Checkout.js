@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import {fruitOrderContext} from "../App";
 
-export default function Checkout(props) {
-  const { apples, bananas, pears } = props;
+export default function Checkout() {
+  const { apples, bananas, pears} = useContext(fruitOrderContext);
+
   return (
     <div>
       <div>
@@ -13,7 +15,10 @@ export default function Checkout(props) {
       <div>
         <h3>🍐: {pears}</h3>
       </div>
-      <button>Checkout!</button>
+      <button
+          onClick={console.log("apples:", apples, "bananas:", bananas, "pears", pears)}
+      >
+          Checkout!</button>
     </div>
   );
 }

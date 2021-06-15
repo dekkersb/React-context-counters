@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
+import { fruitOrderContext } from "../App";
 
-export default function Counters(props) {
-  const { apples, setApples, bananas, setBananas, pears, setPears } = props;
+export default function Counters() {
+  const { apples, setApples, bananas, setBananas, pears, setPears } = useContext(fruitOrderContext);
 
   return (
     <div>
